@@ -12,11 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 import routes from './app/routes'
 routes(app)
 
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg)
-  })
-})
+import socket from './app/socket.io'
+socket(io)
 
 server.listen('3000' | process.env.PORT, () => {
   console.log("Listening on port", server.address().port);

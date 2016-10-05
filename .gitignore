@@ -2,3 +2,4 @@
 /public/assets/js/*
 /app/*
 /public/libs/*
+/npm-debug.log
